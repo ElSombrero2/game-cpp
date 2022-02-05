@@ -9,12 +9,6 @@
 
 using namespace std;
 
-void animate(SDL_Renderer* renderer, SDL_Rect* rect, double deltaTime, double speed) {
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderFillRect(renderer, rect);
-    rect->x += speed * deltaTime;
-}
-
 int main(int argc, char** argv) {
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
     SDL_Window* window = SDL_CreateWindow("Game Engine C++", CENTERED_POS, CENTERED_POS, 800, 600, SDL_WINDOW_RESIZABLE);
@@ -31,7 +25,6 @@ int main(int argc, char** argv) {
         current = SDL_GetTicks();
         double deltaTime = (current - past) / TIME;
         int now = SDL_GetTicks() - passed;
-        Game::update(deltaTime);
         if(now >= TIME){
             passed = SDL_GetTicks();
             char stream[255];
@@ -39,11 +32,10 @@ int main(int argc, char** argv) {
             SDL_SetWindowTitle(window, stream);
             framerate = 0;
         }else SDL_Delay(TIME / FRAMERATE);
+        Game::update(deltaTime);
+        Game::render(renderer);
         framerate++;
         if(e.type == SDL_QUIT) break;
-
-        animate(renderer, &rect, deltaTime, SPEED);
-
         SDL_RenderPresent(renderer);
     }
 
