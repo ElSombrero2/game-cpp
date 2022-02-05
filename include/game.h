@@ -3,7 +3,7 @@
 
 namespace Game{
   void update(double);
-  void render();
+  void render(SDL_Renderer*);
 }
 
 #endif

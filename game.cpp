@@ -1,12 +1,13 @@
 #include <iostream>
+#include <SDL2/SDL.h>
 #include <game.h>
 
 using namespace std;
 
 void Game::update(double deltaTime){
-  cout << deltaTime << endl;
+
 }
 
-void Game::render(){
+void Game::render(SDL_Renderer *renderer){
 
 }
