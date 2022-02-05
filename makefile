@@ -13,6 +13,6 @@ $(BIN):
 	make build
 
 build-ios : 
-	clear && clang++ -Wall *.c -o bin/debug -I ./include -I ./SDL2.framework/Headers -F ./ -framework SDL2
+	clear && clang++ -Wall *.cpp -o bin/debug -I ./include -I ./SDL2.framework/Headers -F ./ -framework SDL2
 run-ios : 
 	clear && ./bin/debug
