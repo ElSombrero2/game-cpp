@@ -25,6 +25,9 @@ int main(int argc, char** argv) {
         int now = SDL_GetTicks() - passed;
         if(now >= TIME){
             passed = SDL_GetTicks();
+            char stream[255];
+            sprintf(stream, "Game Engine C++ | FRAMERATE: %d", framerate);
+            SDL_SetWindowTitle(window, stream);
             framerate = 0;
         }else SDL_Delay(TIME / FRAMERATE);
         framerate++;
