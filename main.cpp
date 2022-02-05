@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
         framerate++;
         if(e.type == SDL_QUIT) break;
 
-        animate(renderer, &rect, deltaTime, SPEED);
+        animate(renderer, &rect, Time::deltaTime, SPEED);
 
         SDL_RenderPresent(renderer);
     }
