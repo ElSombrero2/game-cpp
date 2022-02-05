@@ -1,6 +1,6 @@
 #include <iostream>
 #include <SDL2/SDL.h>
-#include "time.h"
+#include <game.h>
 
 #define CENTERED_POS SDL_WINDOWPOS_CENTERED
 #define TIME 1000.0
@@ -29,8 +29,9 @@ int main(int argc, char** argv) {
         SDL_PollEvent(&e);
         past = current;
         current = SDL_GetTicks();
-        Time::deltaTime = (current - past) / TIME;
+        double deltaTime = (current - past) / TIME;
         int now = SDL_GetTicks() - passed;
+        Game::update(deltaTime);
         if(now >= TIME){
             passed = SDL_GetTicks();
             char stream[255];
