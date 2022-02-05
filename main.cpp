@@ -13,7 +13,6 @@ int main(int argc, char** argv) {
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
     SDL_Window* window = SDL_CreateWindow("Game Engine C++", CENTERED_POS, CENTERED_POS, 800, 600, SDL_WINDOW_RESIZABLE);
     SDL_Renderer* renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_ACCELERATED);
-    SDL_Rect rect = {0, 0, 50, 50};
 
     int passed = 0, framerate = 0;
     double current = 0, past = SDL_GetTicks();
