@@ -25,7 +25,6 @@ int main(int argc, char** argv) {
         int now = SDL_GetTicks() - passed;
         if(now >= TIME){
             passed = SDL_GetTicks();
-            
             framerate = 0;
         }else SDL_Delay(TIME / FRAMERATE);
         framerate++;
