@@ -1,3 +1,4 @@
 bin/
 lib/
 SDL2.framework
+.vscode
